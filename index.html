@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recordatorio de Obligaciones Fiscales — Nunca más una multa por olvidar una fecha</title>
+<meta name="description" content="Descarga gratis el Recordatorio de Obligaciones Fiscales: software que revisa los vencimientos de IVA, renta, retenciones y seguridad social en 19 países hispanos y te avisa antes de que lleguen.">
+<style>
+:root{
+  --bg:#f5f9ff; --surface:#ffffff; --border:#c9d9f0; --text:#1a2744; --muted:#5a6a8a;
+  --accent:#2f9bff; --accent2:#0a6edb; --good:#16a34a; --shadow:0 6px 24px rgba(15,45,90,.10);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6;}
+.container{max-width:1000px; margin:0 auto; padding:0 20px;}
+
+/* ---- HEADER ---- */
+header{background:linear-gradient(135deg,#0a6edb,#2f9bff); color:#fff; padding:34px 0 40px; text-align:center;}
+.badge{display:inline-block; background:rgba(255,255,255,.15); padding:4px 14px; border-radius:999px; font-size:.85rem; margin-bottom:14px;}
+h1{font-size:clamp(1.5rem,4vw,2.4rem); font-weight:800; margin-bottom:10px;}
+.sub{max-width:620px; margin:0 auto; opacity:.95; font-size:1.05rem;}
+.descarga{margin-top:22px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+
+/* ---- BOTONES ---- */
+.btn{display:inline-block; padding:14px 30px; border-radius:12px; font-weight:700; font-size:1.05rem; text-decoration:none; transition:transform .15s, box-shadow .15s;}
+.btn-descarga{background:#fff; color:var(--accent2); box-shadow:0 4px 14px rgba(10,110,219,.25);}
+.btn-descarga:hover{transform:translateY(-2px); box-shadow:0 8px 22px rgba(10,110,219,.35);}
+.btn-ghost{background:transparent; color:#fff; border:2px solid rgba(255,255,255,.6);}
+.btn-ghost:hover{border-color:#fff;}
+
+/* ---- SECCIONES ---- */
+section{padding:40px 0;}
+h2{font-size:1.7rem; color:var(--accent2); margin-bottom:16px; font-weight:800;}
+.card{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:24px; box-shadow:var(--shadow);}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;}
+.feature{padding:18px; border-radius:12px; background:#fff; border:1px solid var(--border);}
+.feature .icon{font-size:1.6rem;}
+.feature h3{font-size:1.1rem; margin:8px 0 4px; color:var(--accent2);}
+.feature p{color:var(--muted); font-size:.93rem;}
+
+/* ---- ANUNCIOS ---- */
+.ad-band{display:flex; justify-content:center; margin:26px 0;}
+.ad-box{width:100%; max-width:728px; min-height:90px; border:2px dashed #b9cbf0; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#8aa2cc; font-size:.85rem; background:#edf3ff; text-align:center; padding:10px;}
+.ad-rect{width:300px; height:250px; border:2px dashed #b9cbf0; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#8aa2cc; font-size:.8rem; background:#edf3ff; text-align:center;}
+
+/* ---- VINCULOS UTILES / SEO ---- */
+.links{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px;}
+.links a{background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px; text-decoration:none; color:var(--text); display:flex; align-items:center; gap:10px; transition:border-color .15s, transform .15s;}
+.links a:hover{border-color:var(--accent); transform:translateY(-2px);}
+.links .t{font-weight:700; color:var(--accent2);}
+.links .d{font-size:.85rem; color:var(--muted);}
+
+/* ---- TABLA PAISES ---- */
+.paises{display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
+.paises span{background:#fff; border:1px solid var(--border); padding:6px 14px; border-radius:999px; font-size:.9rem;}
+
+/* ---- FOOTER ---- */
+footer{background:#0a1628; color:#aac4ee; padding:30px 0; text-align:center; font-size:.9rem;}
+footer a{color:#6db5ff; text-decoration:none;}
+
+@media(max-width:640px){ .btn{width:100%; text-align:center;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="badge">Software gratuito · Código abierto · 19 países</div>
+    <h1>Recordatorio de Obligaciones Fiscales</h1>
+    <p class="sub">Detecta automáticamente los vencimientos de IVA, renta, retenciones y seguridad social de tu país y <strong>te avisa antes de que lleguen</strong>. Nunca más una multa por olvidar una fecha.</p>
+    <div class="descarga">
+      <a class="btn btn-descarga" href="#descarga">⬇ Descargar gratis</a>
+      <a class="btn btn-ghost" href="#ver-demo">Ver cómo funciona</a>
+    </div>
+    <!-- ANUNCIO: banner principal -->
+    <div class="ad-band">
+      <div class="ad-box">[ ANUNCIO — Banner 728×90: pega aquí tu código AdSense / afiliado ]</div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Sección de descarga -->
+  <a id="descarga"></a>
+  <section>
+    <div class="card">
+      <h2>⬇ Descarga gratuita</h2>
+      <p style="color:var(--muted); margin-bottom:16px">Versión 0.3.0 · Windows · Portátil (solo doble clic) · Código abierto.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <!-- AQUI el vinculo de descarga real (o afiliado a hosting) -->
+        <a class="btn btn-descarga" style="background:var(--accent2); color:#fff" href="#">Descargar .zip (13 MB)</a>
+      </div>
+      <p style="color:#879; font-size:.85rem; margin-top:10px">Alternativa: descarga el <a href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales" style="color:var(--accent2)">código fuente en GitHub</a>.</p>
+    </div>
+  </section>
+
+  <!-- Características -->
+  <section>
+    <h2>¿Qué hace?</h2>
+    <div class="grid">
+      <div class="feature"><div class="icon">🔔</div><h3>Avisos automáticos</h3><p>Una tarea diaria revisa los vencimientos y te salta una notificación antes de cada fecha.</p></div>
+      <div class="feature"><div class="icon">🌎</div><h3>19 países</h3><p>El Salvador, Guatemala, México, Colombia, España… con las obligaciones reales de cada autoridad fiscal.</p></div>
+      <div class="feature"><div class="icon">🖥️</div><h3>GUI simple</h3><p>Elige tu país, la hora del aviso y los días de antelación en una ventana clara.</p></div>
+      <div class="feature"><div class="icon">🔄</div><h3>Se actualiza solo</h3><p>Detecta versiones nuevas y te avisa para que los datos estén siempre frescos.</p></div>
+      <div class="feature"><div class="icon">💾</div><h3>100% local</h3><p>Tus datos no salen de tu computadora. Privacidad total.</p></div>
+      <div class="feature"><div class="icon">📂</div><h3>Código abierto</h3><p>Transparente y colaborativo. Cualquier contador puede mejorar los datos de su país.</p></div>
+    </div>
+  </section>
+
+  <!-- ANUNCIO: rectángulo lateral + texto -->
+  <div class="ad-band">
+    <div class="ad-rect">[ ANUNCIO — Rectángulo 300×250 ]</div>
+  </div>
+
+  <!-- Vínculos útiles (SEO + afinidad con usuarios) -->
+  <section>
+    <h2 id="ver-demo">Vínculos útiles</h2>
+    <p style="color:var(--muted); margin-bottom:16px">Recursos que complementan el recordatorio:</p>
+    <div class="links">
+      <!-- Afiliados / enlaces de valor (pega aqui el enlace de afiliado real) -->
+      <a href="#" rel="nofollow sponsored"><span style="font-size:1.3rem">📅</span><span><span class="t">Calendario fiscal 2026</span><br><span class="d">Fechas por país</span></span></a>
+      <a href="#" rel="nofollow sponsored"><span style="font-size:1.3rem">🏛️</span><span><span class="t">Autoridades fiscales</span><br><span class="d">MH, SAT, SAR, SUNAT…</span></span></a>
+      <a href="#" rel="nofollow sponsored"><span style="font-size:1.3rem">🖥️</span><span><span class="t">Software de contabilidad</span><br><span class="d">Factura y lleva tus cuentas</span></span></a>
+      <a href="#" rel="nofollow sponsored"><span style="font-size:1.3rem">🧾</span><span><span class="t">Plantillas de factura</span><br><span class="d">Excel / Word listas</span></span></a>
+      <a href="#" rel="nofollow sponsored"><span style="font-size:1.3rem">🎓</span><span><span class="t">Cursos para contadores</span><br><span class="d">Actualización fiscal</span></span></a>
+      <a href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales" target="_blank"><span style="font-size:1.3rem">🧑‍💻</span><span><span class="t">Código en GitHub</span><br><span class="d">Aporta o consulta</span></span></a>
+    </div>
+  </section>
+
+  <!-- Promoción de DescargarFacturas (nuestro software) -->
+  <section>
+    <div class="card" style="display:flex; gap:20px; align-items:center; flex-wrap:wrap; border-left:6px solid var(--accent2);">
+      <div style="flex:1; min-width:240px">
+        <h2 style="margin-bottom:6px">¿Contador? Te presento un aliado</h2>
+        <p style="color:var(--muted); margin-bottom:12px">
+          <strong>DescargarFacturas</strong> descarga automáticamente tus DTE
+          (facturas, crédito fiscal, retención) desde la plataforma de Hacienda
+          y los deja ordenados por mes y cliente, con verificación con Hacienda.
+        </p>
+        <!-- Enlace a nuestro software -->
+        <a class="btn btn-descarga" style="background:var(--accent2); color:#fff" href="#">Ver DescargarFacturas</a>
+      </div>
+      <div style="min-width:200px; text-align:center; background:#edf3ff; border-radius:12px; padding:18px">
+        <div style="font-size:3rem">🧾</div>
+        <div style="font-weight:700; color:var(--accent2)">Descarga automática de DTE</div>
+        <div style="font-size:.85rem; color:var(--muted)">Ahorra horas en la gestión de facturación</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Países cubiertos -->
+  <section>
+    <h2>Países cubiertos</h2>
+    <div class="paises">
+      <span>🇸🇻 El Salvador</span><span>🇬🇹 Guatemala</span><span>🇭🇳 Honduras</span>
+      <span>🇳🇮 Nicaragua</span><span>🇵🇦 Panamá</span><span>🇨🇷 Costa Rica</span>
+      <span>🇩🇴 R. Dominicana</span><span>🇲🇽 México</span><span>🇨🇴 Colombia</span>
+      <span>🇵🇪 Perú</span><span>🇨🇱 Chile</span><span>🇦🇷 Argentina</span>
+      <span>🇪🇨 Ecuador</span><span>🇺🇾 Uruguay</span><span>🇵🇾 Paraguay</span>
+      <span>🇧🇴 Bolivia</span><span>🇪🇸 España</span><span>🇬🇶 Guinea Ecuatorial</span>
+      <span>🇺🇸 EE.UU.</span>
+    </div>
+  </section>
+
+  <!-- ANUNCIO final -->
+  <div class="ad-band">
+    <div class="ad-box">[ ANUNCIO — Banner inferior ]</div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>Recordatorio de Obligaciones Fiscales · Software gratuito y de código abierto.</p>
+    <p style="margin-top:6px"><a href="#">Política de privacidad</a> · <a href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales">GitHub</a></p>
+    <p style="margin-top:8px; opacity:.7">No sustituye el asesoramiento profesional. Verifica siempre el calendario oficial de tu país.</p>
+  </div>
+</footer>
+
+</body>
+</html>
