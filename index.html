@@ -5,88 +5,121 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Recordatorio de Obligaciones Fiscales — Nunca más una multa por olvidar una fecha</title>
 <meta name="description" content="Descarga gratis el Recordatorio de Obligaciones Fiscales: software que revisa los vencimientos de IVA, renta, retenciones y seguridad social en 19 países hispanos y te avisa antes de que lleguen.">
+<!-- Sistema: Modern Tool / Builder SaaS en TEMA CLARO. Sin emojis en features,
+     un solo acento, tipografia Inter Tight, hairline, radios contenidos.
+     Preserva enlaces de descarga/sitio y capturas reales. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f9ff; --surface:#ffffff; --border:#c9d9f0; --text:#1a2744; --muted:#5a6a8a;
-  --accent:#2f9bff; --accent2:#0a6edb; --good:#16a34a; --warn:#d97706;
-  --green:#25D366; --green-dk:#128C7E; --shadow:0 6px 24px rgba(15,45,90,.10);
+  /* Claro, coherente con la marca (un solo acento azul) */
+  --bg:#f7f9fc; --surface:#ffffff; --surface2:#eef1f7; --hairline:#e3e8f0;
+  --text:#141a26; --text2:#4b5563; --text3:#8a94a6;
+  --accent:#2d6fdf; --accent-soft:#e9f0fd; --accent-dk:#1d4fa8;
+  --good:#15803d; --wa:#25D366; --wa-dk:#128C7E;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 16px rgba(16,24,40,.04);
+  --r-sm:6px; --r-md:10px; --r-lg:14px;   /* nunca mayor a 14 (contenido, sobrio) */
+  --ease:cubic-bezier(0.22,1,0.36,1);
 }
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6;}
-.container{max-width:1000px; margin:0 auto; padding:0 20px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.container{max-width:1000px;margin:0 auto;padding:0 20px}
 
 /* ---- HEADER ---- */
-header{background:linear-gradient(135deg,#0a6edb,#2f9bff); color:#fff; padding:44px 0 48px; text-align:center;}
-.badge{display:inline-block; background:rgba(255,255,255,.15); padding:5px 16px; border-radius:999px; font-size:.85rem; margin-bottom:16px; font-weight:600;}
-h1{font-size:clamp(1.6rem,4.5vw,2.6rem); font-weight:800; margin-bottom:12px; line-height:1.15;}
-.sub{max-width:640px; margin:0 auto; opacity:.95; font-size:1.08rem;}
-.descarga{margin-top:26px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; align-items:center;}
-.descarga-note{font-size:.85rem; opacity:.9; margin-top:12px;}
+header{background:linear-gradient(180deg,#fff,var(--bg));padding:56px 0 40px;text-align:center;border-bottom:1px solid var(--hairline);position:relative;overflow:hidden}
+header::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(closest-side at 15% 0%,rgba(45,111,223,.05),transparent 70%),
+             radial-gradient(closest-side at 85% 10%,rgba(45,111,223,.04),transparent 65%)}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);
+  border:1px solid #c7d8f6;color:var(--accent-dk);padding:6px 16px;border-radius:999px;
+  font-size:13px;font-weight:500;margin-bottom:20px;position:relative}
+.badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-family:'Inter Tight',sans-serif;font-weight:700;letter-spacing:-.03em;
+  font-size:clamp(30px,5vw,46px);line-height:1.1;position:relative;color:var(--text)}
+.sub{max-width:620px;margin:14px auto 0;color:var(--text2);font-size:17px;position:relative}
+.sub strong{color:var(--text);font-weight:600}
+.descarga{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center;position:relative}
+.descarga-note{font-size:13px;color:var(--text3);margin-top:14px;position:relative}
 
 /* ---- BOTONES ---- */
-.btn{display:inline-block; padding:14px 32px; border-radius:12px; font-weight:800; font-size:1.1rem; text-decoration:none; transition:transform .15s, box-shadow .15s;}
-.btn-primario{background:#fff; color:var(--accent2); box-shadow:0 6px 18px rgba(10,110,219,.30);}
-.btn-primario:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(10,110,219,.42);}
-.btn-ghost{background:transparent; color:#fff; border:2px solid rgba(255,255,255,.65); font-size:1rem;}
-.btn-ghost:hover{border-color:#fff;}
-.btn-solid{background:var(--accent2); color:#fff; box-shadow:0 6px 18px rgba(10,110,219,.28);}
-.btn-solid:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(10,110,219,.4);}
-.btn-wa{background:var(--green); color:#075e54; box-shadow:0 6px 18px rgba(37,211,102,.35);}
-.btn-wa:hover{transform:translateY(-2px); filter:brightness(1.05);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:var(--r-md);
+  font-weight:600;font-size:15px;transition:filter .15s,transform .1s,box-shadow .15s}
+.btn:hover{filter:brightness(1.04);transform:translateY(-1px)}
+.btn-primario{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(45,111,223,.25)}
+.btn-ghost{background:transparent;color:var(--accent-dk);border:1px solid var(--hairline)}
+.btn-ghost:hover{background:var(--surface2)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 4px 14px rgba(37,211,102,.25)}
+.btn-solid{background:var(--accent);color:#fff}
+.btn svg{width:18px;height:18px}
 
 /* ---- SECCIONES ---- */
-section{padding:44px 0;}
-h2{font-size:1.75rem; color:var(--accent2); margin-bottom:8px; font-weight:800;}
-.seccion-sub{color:var(--muted); margin-bottom:26px; max-width:720px;}
-.card{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow);}
-.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;}
-.feature{padding:20px; border-radius:12px; background:#fff; border:1px solid var(--border); text-align:center;}
-.feature .icon{font-size:1.7rem;}
-.feature h3{font-size:1.12rem; margin:8px 0 6px; color:var(--accent2);}
-.feature p{color:var(--muted); font-size:.94rem;}
+section{padding:52px 0}
+h2{font-family:'Inter Tight',sans-serif;font-weight:700;letter-spacing:-.02em;font-size:26px;color:var(--text);margin-bottom:10px}
+.seccion-sub{color:var(--text2);margin-bottom:26px;max-width:720px}
+.seccion-sub strong{color:var(--text)}
+
+/* ---- FEATURES ---- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.feature{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);
+  padding:20px;transition:border-color .15s,box-shadow .15s}
+.feature:hover{border-color:#c7d8f6;box-shadow:var(--shadow)}
+.feature .icon{width:38px;height:38px;border-radius:8px;background:var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:12px}
+.feature .icon svg{width:20px;height:20px}
+.feature h3{font-family:'Inter Tight',sans-serif;font-weight:600;font-size:15px;margin-bottom:5px;color:var(--text)}
+.feature p{color:var(--text2);font-size:13.5px}
 
 /* ---- CAPTURAS ---- */
-#como-funciona{background:#eaf2ff;}
-.captura-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; align-items:stretch;}
-.captura{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column;}
-.captura img{width:100%; height:260px; object-fit:cover; object-position:top; display:block; border-bottom:1px solid var(--border);}
-.captura figcaption{padding:12px 16px; font-size:.9rem; color:var(--muted); text-align:center; flex:1 0 auto; display:flex; align-items:center; justify-content:center;}
+#como-funciona{background:var(--surface);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+.captura-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:stretch}
+.captura{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);overflow:hidden;
+  transition:box-shadow .15s}
+.captura:hover{box-shadow:var(--shadow)}
+.captura img{width:100%;height:240px;object-fit:cover;object-position:top;display:block;background:var(--surface2)}
+.captura figcaption{padding:12px 16px;font-size:13px;color:var(--text2);text-align:center;display:flex;align-items:center;justify-content:center;flex:1 0 auto}
+
+/* ---- PASOS ---- */
+.pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:6px}
+.paso{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:22px;text-align:center}
+.paso .num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;
+  background:var(--accent);color:#fff;font-weight:700;font-size:14px;margin-bottom:10px}
+.paso .icon{width:40px;height:40px;margin:0 auto 8px;border-radius:8px;background:var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.paso .icon svg{width:20px;height:20px}
+.paso h3{font-family:'Inter Tight',sans-serif;font-weight:600;font-size:15px;margin-bottom:4px}
+.paso p{color:var(--text2);font-size:13px}
 
 /* ---- FAQ ---- */
-.faq{max-width:760px; margin:0 auto;}
-.faq-item{background:var(--surface); border:1px solid var(--border); border-radius:12px; margin-bottom:12px; overflow:hidden;}
-.faq-q{padding:18px 22px; cursor:pointer; font-weight:700; display:flex; justify-content:space-between; align-items:center; user-select:none;}
-.faq-q::after{content:"▾"; transition:transform .2s; color:var(--accent2); font-size:1.1rem;}
-.faq-item.abierto .faq-q::after{transform:rotate(180deg);}
-.faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
-.faq-a-inner{padding:0 22px 18px; color:var(--muted); font-size:.95rem;}
+.faq{max-width:760px;margin:0 auto}
+.faq-item{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;align-items:center;user-select:none;font-size:14.5px}
+.faq-q::after{content:"";width:10px;height:10px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);
+  transform:rotate(45deg);transition:transform .2s var(--ease);margin-top:-4px}
+.faq-item.abierto .faq-q::after{transform:rotate(225deg);margin-top:4px}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a-inner{padding:0 20px 18px;color:var(--text2);font-size:14px}
+.faq-a-inner strong{color:var(--text)}
 
 /* ---- CROSS-SELL ---- */
-#descargarfacturas{background:linear-gradient(180deg,#fff,#eef6ff);}
-.cross-cta{display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:center; margin-top:22px;}
-
-/* ---- PASOS (cómo funciona) ---- */
-.pasos{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:6px;}
-.paso{background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px; box-shadow:var(--shadow); text-align:center;}
-.paso .num{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:var(--accent2); color:#fff; font-weight:800; font-size:1.1rem; margin-bottom:10px;}
-.paso .icon{font-size:1.6rem; margin-bottom:6px;}
-.paso h3{font-size:1.05rem; color:var(--accent2); margin-bottom:4px;}
-.paso p{color:var(--muted); font-size:.9rem;}
+#descargarfacturas{border-top:1px solid var(--hairline);background:var(--surface)}
+.cross-cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.cross-card{padding:30px;background:linear-gradient(180deg,#fff,var(--accent-soft));border:1px solid #c7d8f6;border-radius:var(--r-lg)}
 
 /* ---- PAISES ---- */
-.paises{display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
-.paises span{background:#fff; border:1px solid var(--border); padding:6px 14px; border-radius:999px; font-size:.9rem; display:inline-flex; align-items:center; gap:6px;}
+.paises{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.paises span{background:var(--surface);border:1px solid var(--hairline);padding:6px 14px;border-radius:999px;
+  font-size:13px;display:inline-flex;align-items:center;gap:6px}
 
 /* ---- FOOTER ---- */
-footer{background:#0a1628; color:#aac4ee; padding:34px 0 30px; text-align:center; font-size:.9rem;}
-footer a{color:#6db5ff; text-decoration:none;}
-footer .disclaimer{margin-top:10px; opacity:.7;}
+footer{background:#0f1520;color:#9fb0ca;padding:32px 0 28px;text-align:center;font-size:13px}
+footer a{color:#7fb2ff;text-decoration:none}
+footer .disclaimer{margin-top:10px;opacity:.75}
 
 @media(max-width:640px){
-  .btn{width:100%; text-align:center;}
-  .paises{gap:6px;}
-  .paises span{font-size:.8rem; padding:5px 10px;}
-  .captura img{height:200px;}
+  .btn{width:100%;justify-content:center}
+  .captura img{height:200px}
 }
 </style>
 </head>
@@ -94,11 +127,14 @@ footer .disclaimer{margin-top:10px; opacity:.7;}
 
 <header>
   <div class="container">
-    <div class="badge">Software gratuito · Código abierto · 19 países · 100% local</div>
+    <div class="badge"><span class="dot"></span> Software gratuito · Código abierto · 19 países · 100% local</div>
     <h1>Nunca más una multa por olvidar una fecha</h1>
     <p class="sub">Recordatorio de Obligaciones Fiscales detecta los vencimientos de IVA, renta, retenciones y seguridad social de tu país y <strong>te avisa antes de que lleguen</strong>. Gratis, local y en tu idioma.</p>
     <div class="descarga">
-      <a class="btn btn-primario" href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales/releases/download/v0.3.0/AvisosObligacionesFiscales_v0.3.0.zip">⬇ Descargar Gratis Ahora</a>
+      <a class="btn btn-primario" href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales/releases/download/v0.3.0/AvisosObligacionesFiscales_v0.3.0.zip">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3v8m0 0l-3-3m3 3l3-3M4 15h12"/></svg>
+        Descargar Gratis Ahora
+      </a>
       <a class="btn btn-ghost" href="#como-funciona">Ver cómo funciona</a>
     </div>
     <div class="descarga-note">Versión 0.3.0 · Windows · Portátil (solo doble clic) · <strong>12,5 MB</strong></div>
@@ -112,12 +148,12 @@ footer .disclaimer{margin-top:10px; opacity:.7;}
     <h2>¿Qué hace?</h2>
     <p class="seccion-sub">Todo lo que un contador necesita para no perder una fecha, en un solo programa:</p>
     <div class="grid">
-      <div class="feature"><div class="icon">🔔</div><h3>Avisos automáticos</h3><p>Una tarea diaria revisa los vencimientos y te avisa antes de cada fecha.</p></div>
-      <div class="feature"><div class="icon">🌎</div><h3>19 países</h3><p>El Salvador, Guatemala, México, Colombia, España… con las obligaciones reales de cada autoridad.</p></div>
-      <div class="feature"><div class="icon">🖥️</div><h3>GUI simple</h3><p>Elige tu país, la hora del aviso y los días de antelación en una ventana clara.</p></div>
-      <div class="feature"><div class="icon">🔄</div><h3>Se actualiza solo</h3><p>Detecta versiones nuevas y te avisa para que los datos estén siempre frescos.</p></div>
-      <div class="feature"><div class="icon">💾</div><h3>100% local</h3><p>Tus datos no salen de tu computadora. Privacidad total.</p></div>
-      <div class="feature"><div class="icon">📂</div><h3>Código abierto</h3><p>Transparente y colaborativo. Cualquier contador puede mejorar los datos de su país.</p></div>
+      <div class="feature"><span class="icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="7"/><path d="M12 9v3l2 2M5 3l-2 2M7 1l1 2"/></svg></span><h3>Avisos automáticos</h3><p>Una tarea diaria revisa los vencimientos y te avisa antes de cada fecha.</p></div>
+      <div class="feature"><span class="icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="7"/><path d="M3 10h14M10 3a14 14 0 010 14M10 3a14 14 0 000 14"/></svg></span><h3>19 países</h3><p>El Salvador, Guatemala, México, Colombia, España… con las obligaciones reales de cada autoridad.</p></div>
+      <div class="feature"><span class="icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M3 8h14M3 12h14M8 15h4"/></svg></span><h3>GUI simple</h3><p>Elige tu país, la hora del aviso y los días de antelación en una ventana clara.</p></div>
+      <div class="feature"><span class="icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 10a8 8 0 018-8 8 8 0 017.9 7M18 10a8 8 0 01-8 8 8 8 0 01-7.9-7"/><path d="M13 2l5 0 0 5M7 18l-5 0 0-5"/></svg></span><h3>Se actualiza solo</h3><p>Detecta versiones nuevas y te avisa para que los datos estén siempre frescos.</p></div>
+      <div class="feature"><span class="icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="10" cy="5" rx="6" ry="2.5"/><path d="M4 5v6c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V5M4 11v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-4"/></svg></span><h3>100% local</h3><p>Tus datos no salen de tu computadora. Privacidad total.</p></div>
+      <div class="feature"><span class="icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 6l6 6-6 6M14 6l-6 6 6 6"/></svg></span><h3>Código abierto</h3><p>Transparente y colaborativo. Cualquier contador puede mejorar los datos de su país.</p></div>
     </div>
   </section>
 
@@ -141,34 +177,37 @@ footer .disclaimer{margin-top:10px; opacity:.7;}
     </div>
   </section>
 
-  <!-- Sección de pasos: cómo descargar e instalar -->
+  <!-- Pasos -->
   <section id="pasos">
     <h2>Cómo empezar en 3 pasos</h2>
     <p class="seccion-sub">Descárgalo y en un minuto lo tienes funcionando. Sin instalar Python.</p>
     <div class="pasos">
-      <div class="paso"><div class="num">1</div><div class="icon">⬇️</div><h3>Descarga</h3><p>Haz clic en "Descargar Gratis Ahora" y guarda el archivo.</p></div>
-      <div class="paso"><div class="num">2</div><div class="icon">🖥️</div><h3>Instala</h3><p>Ejecuta el instalador y sigue los pasos (o descomprime el .zip). Sin pasos complicados.</p></div>
-      <div class="paso"><div class="num">3</div><div class="icon">⚙️</div><h3>Configura</h3><p>Elige tu país, la hora del aviso y los días de anticipo. Ya funciona.</p></div>
+      <div class="paso"><div class="num">1</div><div class="icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3v8m0 0l-3-3m3 3l3-3M4 15h12"/></svg></div><h3>Descarga</h3><p>Haz clic en "Descargar Gratis Ahora" y guarda el archivo.</p></div>
+      <div class="paso"><div class="num">2</div><div class="icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="12" height="14" rx="1.5"/><path d="M8 7h4M8 11h4"/></svg></div><h3>Instala</h3><p>Ejecuta el instalador y sigue los pasos (o descomprime el .zip). Sin pasos complicados.</p></div>
+      <div class="paso"><div class="num">3</div><div class="icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 2"/></svg></div><h3>Configura</h3><p>Elige tu país, la hora del aviso y los días de anticipo. Ya funciona.</p></div>
     </div>
-    <p style="color:var(--muted); font-size:.9rem; text-align:center; margin-top:16px">La versión portátil (descomprimir y abrir) también está disponible. Los avisos diarios se programan solos.</p>
+    <p class="seccion-sub" style="text-align:center;margin-top:16px;font-size:13.5px">La versión portátil (descomprimir y abrir) también está disponible. Los avisos diarios se programan solos.</p>
   </section>
 
   <!-- Cross-selling DescargarFacturas -->
   <section id="descargarfacturas">
-    <div class="card" style="border-left:6px solid var(--accent2); padding:30px;">
-      <h2>🧾 ¿Necesitas más que recordatorios?</h2>
+    <div class="cross-card">
+      <h2>¿Necesitas más que recordatorios?</h2>
       <p class="seccion-sub" style="margin-bottom:12px">
         El recordatorio gratuito cubre las <strong>fechas oficiales</strong>. Pero si manejas
         fechas que no están en ningún calendario — <strong>entregas a clientes, plazos internos,
         auditorías</strong> — eso lo resuelve <strong>DescargarFacturas</strong>.
       </p>
-      <p style="color:var(--muted); margin-bottom:6px">
+      <p style="color:var(--text2);font-size:14.5px;margin-bottom:6px">
         Descarga tus facturas del correo automáticamente, las organiza por país, año, mes y tipo,
         crea <strong>recordatorios personalizados</strong> y exporta a CSV para tus declaraciones.
       </p>
       <div class="cross-cta">
         <a class="btn btn-solid" href="https://benavidesk.github.io/descargar-facturas-landing/" target="_blank">Conocer más</a>
-        <a class="btn btn-wa" href="https://wa.me/50366924056" target="_blank">💬 Pedir demo por WhatsApp</a>
+        <a class="btn btn-wa" href="https://wa.me/50366924056" target="_blank">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a8 8 0 00-6.9 12L2 18l4.1-1.1A8 8 0 1010 2zm0 1.5A6.5 6.5 0 015.9 16.7l-.5-.3-2.4.6.6-2.3-.3-.5A6.5 6.5 0 1110 3.5zM7.2 6.2c-.2 0-.4.3-.2.6.5 1.2 1.3 2.3 2.4 3.2.2.2.5.1.6-.1l.6-.7c.2-.2.4-.2.6 0l1.8 1.3c.2.2.2.4 0 .6l-.7.7c-.2.2-.4.4-.7.3-1.8-.3-3.3-1.4-4.4-3.4-.2-.3 0-.5.2-.7.3-.2.4-.3.2-.7z"/></svg>
+          Pedir demo por WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -177,30 +216,12 @@ footer .disclaimer{margin-top:10px; opacity:.7;}
   <section>
     <h2 style="text-align:center">Preguntas frecuentes</h2>
     <div class="faq">
-      <div class="faq-item">
-        <div class="faq-q">¿Es gratis de verdad?</div>
-        <div class="faq-a"><div class="faq-a-inner">Sí. Es 100% gratis y de código abierto. Puedes usarlo, revisar su código y hasta contribuir a mejorar los datos de tu país.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿En qué países funciona?</div>
-        <div class="faq-a"><div class="faq-a-inner">Cubre 19 países: El Salvador, Guatemala, Honduras, Nicaragua, Panamá, Costa Rica, R. Dominicana, México, Colombia, Perú, Chile, Argentina, Ecuador, Uruguay, Paraguay, Bolivia, España, Guinea Ecuatorial y EE.UU.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Mis datos se suben a la nube?</div>
-        <div class="faq-a"><div class="faq-a-inner">No. Todo queda en tu computadora. Es un programa local: tus datos no salen de tu equipo. Solo puede consultar las actualizaciones por internet si quieres.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Cómo me avisa?</div>
-        <div class="faq-a"><div class="faq-a-inner">Programas una tarea diaria en Windows: eliges a qué hora y con cuántos días de antelación. El programa crea automáticamente la notificación sin que tengas que acordarte.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Puedo recordar fechas internas, como entregas a clientes o auditorías?</div>
-        <div class="faq-a"><div class="faq-a-inner">Los recordatorios personalizados (los que tú creas) están en nuestra versión completa, <strong>DescargarFacturas</strong>. El gratuito cubre las fechas oficiales de cada país.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Está actualizado?</div>
-        <div class="faq-a"><div class="faq-a-inner">Sí. El programa detecta automáticamente versiones nuevas y te avisa cuando hay datos actualizados disponibles.</div></div>
-      </div>
+      <div class="faq-item"><div class="faq-q">¿Es gratis de verdad?</div><div class="faq-a"><div class="faq-a-inner">Sí. Es 100% gratis y de código abierto. Puedes usarlo, revisar su código y hasta contribuir a mejorar los datos de tu país.</div></div></div>
+      <div class="faq-item"><div class="faq-q">¿En qué países funciona?</div><div class="faq-a"><div class="faq-a-inner">Cubre 19 países: El Salvador, Guatemala, Honduras, Nicaragua, Panamá, Costa Rica, R. Dominicana, México, Colombia, Perú, Chile, Argentina, Ecuador, Uruguay, Paraguay, Bolivia, España, Guinea Ecuatorial y EE.UU.</div></div></div>
+      <div class="faq-item"><div class="faq-q">¿Mis datos se suben a la nube?</div><div class="faq-a"><div class="faq-a-inner">No. Todo queda en tu computadora. Es un programa local: tus datos no salen de tu equipo. Solo puede consultar las actualizaciones por internet si quieres.</div></div></div>
+      <div class="faq-item"><div class="faq-q">¿Cómo me avisa?</div><div class="faq-a"><div class="faq-a-inner">Programas una tarea diaria en Windows: eliges a qué hora y con cuántos días de antelación. El programa crea automáticamente la notificación sin que tengas que acordarte.</div></div></div>
+      <div class="faq-item"><div class="faq-q">¿Puedo recordar fechas internas, como entregas a clientes o auditorías?</div><div class="faq-a"><div class="faq-a-inner">Los recordatorios personalizados (los que tú creas) están en nuestra versión completa, <strong>DescargarFacturas</strong>. El gratuito cubre las fechas oficiales de cada país.</div></div></div>
+      <div class="faq-item"><div class="faq-q">¿Está actualizado?</div><div class="faq-a"><div class="faq-a-inner">Sí. El programa detecta automáticamente versiones nuevas y te avisa cuando hay datos actualizados disponibles.</div></div></div>
     </div>
   </section>
 
@@ -219,11 +240,14 @@ footer .disclaimer{margin-top:10px; opacity:.7;}
   </section>
 
   <!-- CTA final -->
-  <section style="text-align:center; padding-top:20px;">
+  <section style="text-align:center;padding-top:20px">
     <h2>Empieza gratis hoy</h2>
-    <p class="seccion-sub" style="margin-left:auto; margin-right:auto">Descárgalo, elige tu país y deja de preocuparte por las fechas.</p>
-    <a class="btn btn-solid" href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales/releases/download/v0.3.0/AvisosObligacionesFiscales_v0.3.0.zip" style="font-size:1.2rem">⬇ Descargar Gratis Ahora</a>
-    <div style="margin-top:14px; color:var(--muted); font-size:.9rem">¿Dudas? <a href="https://wa.me/50366924056" style="color:var(--accent2)">Escríbenos por WhatsApp</a></div>
+    <p class="seccion-sub" style="margin-left:auto;margin-right:auto">Descárgalo, elige tu país y deja de preocuparte por las fechas.</p>
+    <a class="btn btn-solid" href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales/releases/download/v0.3.0/AvisosObligacionesFiscales_v0.3.0.zip" style="font-size:16px;padding:15px 34px">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3v8m0 0l-3-3m3 3l3-3M4 15h12"/></svg>
+      Descargar Gratis Ahora
+    </a>
+    <div style="margin-top:14px;color:var(--text2);font-size:13.5px">¿Dudas? <a href="https://wa.me/50366924056" style="color:var(--accent-dk);font-weight:600">Escríbenos por WhatsApp</a></div>
   </section>
 
 </div>
