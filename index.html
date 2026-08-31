@@ -8,50 +8,79 @@
 <style>
 :root{
   --bg:#f5f9ff; --surface:#ffffff; --border:#c9d9f0; --text:#1a2744; --muted:#5a6a8a;
-  --accent:#2f9bff; --accent2:#0a6edb; --good:#16a34a; --shadow:0 6px 24px rgba(15,45,90,.10);
+  --accent:#2f9bff; --accent2:#0a6edb; --good:#16a34a; --warn:#d97706;
+  --green:#25D366; --green-dk:#128C7E; --shadow:0 6px 24px rgba(15,45,90,.10);
 }
 *{box-sizing:border-box; margin:0; padding:0;}
 body{font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6;}
 .container{max-width:1000px; margin:0 auto; padding:0 20px;}
 
 /* ---- HEADER ---- */
-header{background:linear-gradient(135deg,#0a6edb,#2f9bff); color:#fff; padding:34px 0 40px; text-align:center;}
-.badge{display:inline-block; background:rgba(255,255,255,.15); padding:4px 14px; border-radius:999px; font-size:.85rem; margin-bottom:14px;}
-h1{font-size:clamp(1.5rem,4vw,2.4rem); font-weight:800; margin-bottom:10px;}
-.sub{max-width:620px; margin:0 auto; opacity:.95; font-size:1.05rem;}
-.descarga{margin-top:22px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+header{background:linear-gradient(135deg,#0a6edb,#2f9bff); color:#fff; padding:44px 0 48px; text-align:center;}
+.badge{display:inline-block; background:rgba(255,255,255,.15); padding:5px 16px; border-radius:999px; font-size:.85rem; margin-bottom:16px; font-weight:600;}
+h1{font-size:clamp(1.6rem,4.5vw,2.6rem); font-weight:800; margin-bottom:12px; line-height:1.15;}
+.sub{max-width:640px; margin:0 auto; opacity:.95; font-size:1.08rem;}
+.descarga{margin-top:26px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; align-items:center;}
+.descarga-note{font-size:.85rem; opacity:.9; margin-top:12px;}
 
 /* ---- BOTONES ---- */
-.btn{display:inline-block; padding:14px 30px; border-radius:12px; font-weight:700; font-size:1.05rem; text-decoration:none; transition:transform .15s, box-shadow .15s;}
-.btn-descarga{background:#fff; color:var(--accent2); box-shadow:0 4px 14px rgba(10,110,219,.25);}
-.btn-descarga:hover{transform:translateY(-2px); box-shadow:0 8px 22px rgba(10,110,219,.35);}
-.btn-ghost{background:transparent; color:#fff; border:2px solid rgba(255,255,255,.6);}
+.btn{display:inline-block; padding:14px 32px; border-radius:12px; font-weight:800; font-size:1.1rem; text-decoration:none; transition:transform .15s, box-shadow .15s;}
+.btn-primario{background:#fff; color:var(--accent2); box-shadow:0 6px 18px rgba(10,110,219,.30);}
+.btn-primario:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(10,110,219,.42);}
+.btn-ghost{background:transparent; color:#fff; border:2px solid rgba(255,255,255,.65); font-size:1rem;}
 .btn-ghost:hover{border-color:#fff;}
+.btn-solid{background:var(--accent2); color:#fff; box-shadow:0 6px 18px rgba(10,110,219,.28);}
+.btn-solid:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(10,110,219,.4);}
+.btn-wa{background:var(--green); color:#075e54; box-shadow:0 6px 18px rgba(37,211,102,.35);}
+.btn-wa:hover{transform:translateY(-2px); filter:brightness(1.05);}
 
 /* ---- SECCIONES ---- */
-section{padding:40px 0;}
-h2{font-size:1.7rem; color:var(--accent2); margin-bottom:16px; font-weight:800;}
-.card{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:24px; box-shadow:var(--shadow);}
+section{padding:44px 0;}
+h2{font-size:1.75rem; color:var(--accent2); margin-bottom:8px; font-weight:800;}
+.seccion-sub{color:var(--muted); margin-bottom:26px; max-width:720px;}
+.card{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow);}
 .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;}
-.feature{padding:18px; border-radius:12px; background:#fff; border:1px solid var(--border);}
-.feature .icon{font-size:1.6rem;}
-.feature h3{font-size:1.1rem; margin:8px 0 4px; color:var(--accent2);}
-.feature p{color:var(--muted); font-size:.93rem;}
+.feature{padding:20px; border-radius:12px; background:#fff; border:1px solid var(--border);}
+.feature .icon{font-size:1.7rem;}
+.feature h3{font-size:1.12rem; margin:8px 0 6px; color:var(--accent2);}
+.feature p{color:var(--muted); font-size:.94rem;}
 
-/* ---- VINCULOS UTILES / SEO ---- */
-.links{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px;}
-.links a{background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px; text-decoration:none; color:var(--text); display:flex; align-items:center; gap:10px; transition:border-color .15s, transform .15s;}
-.links a:hover{border-color:var(--accent); transform:translateY(-2px);}
-.links .t{font-weight:700; color:var(--accent2);}
-.links .d{font-size:.85rem; color:var(--muted);}
+/* ---- CAPTURAS ---- */
+#como-funciona{background:#eaf2ff;}
+.captura-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;}
+.captura{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:var(--shadow);}
+.captura img{width:100%; height:auto; display:block; border-bottom:1px solid var(--border);}
+.captura figcaption{padding:12px 16px; font-size:.9rem; color:var(--muted); text-align:center;}
 
-/* ---- TABLA PAISES ---- */
+/* ---- FAQ ---- */
+.faq{max-width:760px; margin:0 auto;}
+.faq-item{background:var(--surface); border:1px solid var(--border); border-radius:12px; margin-bottom:12px; overflow:hidden;}
+.faq-q{padding:18px 22px; cursor:pointer; font-weight:700; display:flex; justify-content:space-between; align-items:center; user-select:none;}
+.faq-q::after{content:"▾"; transition:transform .2s; color:var(--accent2); font-size:1.1rem;}
+.faq-item.abierto .faq-q::after{transform:rotate(180deg);}
+.faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+.faq-a-inner{padding:0 22px 18px; color:var(--muted); font-size:.95rem;}
+
+/* ---- TESTIMONIOS ---- */
+.testimonial-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px;}
+.testimonio{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; box-shadow:var(--shadow);}
+.testimonio blockquote{font-style:italic; color:var(--text); margin-bottom:10px; font-size:.97rem;}
+.testimonio cite{color:var(--muted); font-size:.87rem; font-style:normal;}
+.testimonio.vacio{background:#f9fbff; border-style:dashed; color:var(--muted); text-align:center;}
+.testimonio.vacio p{font-style:italic; font-size:.94rem; margin:6px 0;}
+
+/* ---- CROSS-SELL ---- */
+#descargarfacturas{background:linear-gradient(180deg,#fff,#eef6ff);}
+.cross-cta{display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:center; margin-top:22px;}
+
+/* ---- PAISES ---- */
 .paises{display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
 .paises span{background:#fff; border:1px solid var(--border); padding:6px 14px; border-radius:999px; font-size:.9rem;}
 
 /* ---- FOOTER ---- */
-footer{background:#0a1628; color:#aac4ee; padding:30px 0; text-align:center; font-size:.9rem;}
+footer{background:#0a1628; color:#aac4ee; padding:34px 0 30px; text-align:center; font-size:.9rem;}
 footer a{color:#6db5ff; text-decoration:none;}
+footer .disclaimer{margin-top:10px; opacity:.7;}
 
 @media(max-width:640px){ .btn{width:100%; text-align:center;} }
 </style>
@@ -60,36 +89,26 @@ footer a{color:#6db5ff; text-decoration:none;}
 
 <header>
   <div class="container">
-    <div class="badge">Software gratuito · Código abierto · 19 países</div>
-    <h1>Recordatorio de Obligaciones Fiscales</h1>
-    <p class="sub">Detecta automáticamente los vencimientos de IVA, renta, retenciones y seguridad social de tu país y <strong>te avisa antes de que lleguen</strong>. Nunca más una multa por olvidar una fecha.</p>
+    <div class="badge">Software gratuito · Código abierto · 19 países · 100% local</div>
+    <h1>Nunca más una multa por olvidar una fecha</h1>
+    <p class="sub">Recordatorio de Obligaciones Fiscales detecta los vencimientos de IVA, renta, retenciones y seguridad social de tu país y <strong>te avisa antes de que lleguen</strong>. Gratis, local y en tu idioma.</p>
     <div class="descarga">
-      <a class="btn btn-descarga" href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales/releases/download/v0.3.0/AvisosObligacionesFiscales_v0.3.0.zip">⬇ Descargar gratis</a>
-      <a class="btn btn-ghost" href="#ver-demo">Ver cómo funciona</a>
+      <a class="btn btn-primario" href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales/releases/download/v0.3.0/AvisosObligacionesFiscales_v0.3.0.zip">⬇ Descargar Gratis Ahora</a>
+      <a class="btn btn-ghost" href="#como-funciona">Ver cómo funciona</a>
     </div>
+    <div class="descarga-note">Versión 0.3.0 · Windows · Portátil (solo doble clic) · <strong>12,5 MB</strong></div>
   </div>
 </header>
 
 <div class="container">
-  <!-- Sección de descarga -->
-  <a id="descarga"></a>
-  <section>
-    <div class="card">
-      <h2>⬇ Descarga gratuita</h2>
-      <p style="color:var(--muted); margin-bottom:16px">Versión 0.3.0 · Windows · Portátil (solo doble clic) · Código abierto.</p>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn btn-descarga" style="background:var(--accent2); color:#fff" href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales/releases/download/v0.3.0/AvisosObligacionesFiscales_v0.3.0.zip">Descargar .zip (12,5 MB)</a>
-      </div>
-      <p style="color:#879; font-size:.85rem; margin-top:10px">Alternativa: descarga el <a href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales" style="color:var(--accent2)">código fuente en GitHub</a>.</p>
-    </div>
-  </section>
 
   <!-- Características -->
   <section>
     <h2>¿Qué hace?</h2>
+    <p class="seccion-sub">Todo lo que un contador necesita para no perder una fecha, en un solo programa:</p>
     <div class="grid">
-      <div class="feature"><div class="icon">🔔</div><h3>Avisos automáticos</h3><p>Una tarea diaria revisa los vencimientos y te salta una notificación antes de cada fecha.</p></div>
-      <div class="feature"><div class="icon">🌎</div><h3>19 países</h3><p>El Salvador, Guatemala, México, Colombia, España… con las obligaciones reales de cada autoridad fiscal.</p></div>
+      <div class="feature"><div class="icon">🔔</div><h3>Avisos automáticos</h3><p>Una tarea diaria revisa los vencimientos y te avisa antes de cada fecha.</p></div>
+      <div class="feature"><div class="icon">🌎</div><h3>19 países</h3><p>El Salvador, Guatemala, México, Colombia, España… con las obligaciones reales de cada autoridad.</p></div>
       <div class="feature"><div class="icon">🖥️</div><h3>GUI simple</h3><p>Elige tu país, la hora del aviso y los días de antelación en una ventana clara.</p></div>
       <div class="feature"><div class="icon">🔄</div><h3>Se actualiza solo</h3><p>Detecta versiones nuevas y te avisa para que los datos estén siempre frescos.</p></div>
       <div class="feature"><div class="icon">💾</div><h3>100% local</h3><p>Tus datos no salen de tu computadora. Privacidad total.</p></div>
@@ -97,52 +116,94 @@ footer a{color:#6db5ff; text-decoration:none;}
     </div>
   </section>
 
-  <!-- Vínculos útiles (SEO + afinidad con usuarios) -->
-  <section>
-    <h2 id="ver-demo">Vínculos útiles</h2>
-    <p style="color:var(--muted); margin-bottom:16px">Recursos que complementan el recordatorio:</p>
-    <div class="links">
-      <!-- Afiliados / enlaces de valor (pega aqui el enlace de afiliado real) -->
-      <a href="#" rel="nofollow sponsored"><span style="font-size:1.3rem">📅</span><span><span class="t">Calendario fiscal 2026</span><br><span class="d">Fechas por país</span></span></a>
-      <a href="#" rel="nofollow sponsored"><span style="font-size:1.3rem">🏛️</span><span><span class="t">Autoridades fiscales</span><br><span class="d">MH, SAT, SAR, SUNAT…</span></span></a>
-      <a href="#" rel="nofollow sponsored"><span style="font-size:1.3rem">🖥️</span><span><span class="t">Software de contabilidad</span><br><span class="d">Factura y lleva tus cuentas</span></span></a>
-      <a href="#" rel="nofollow sponsored"><span style="font-size:1.3rem">🧾</span><span><span class="t">Plantillas de factura</span><br><span class="d">Excel / Word listas</span></span></a>
-      <a href="#" rel="nofollow sponsored"><span style="font-size:1.3rem">🎓</span><span><span class="t">Cursos para contadores</span><br><span class="d">Actualización fiscal</span></span></a>
-      <a href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales" target="_blank"><span style="font-size:1.3rem">🧑‍💻</span><span><span class="t">Código en GitHub</span><br><span class="d">Aporta o consulta</span></span></a>
+  <!-- Capturas -->
+  <section id="como-funciona">
+    <h2>Así de simple</h2>
+    <p class="seccion-sub">Elige tu país, cuántos días antes quieres que te avise y a qué hora. El programa y Windows se encargan del resto.</p>
+    <div class="captura-grid">
+      <figure class="captura">
+        <img src="capturas/captura1.png" alt="Ventana principal de avisos de obligaciones fiscales, país El Salvador, aviso a las 9:00 y 7 días de antelación">
+        <figcaption>Configura tu aviso: país, hora y días de antelación</figcaption>
+      </figure>
+      <figure class="captura">
+        <img src="capturas/captura2.png" alt="Lista de los 19 países disponibles en el selector de país, con El Salvador seleccionado">
+        <figcaption>19 países listos para elegir</figcaption>
+      </figure>
+      <figure class="captura">
+        <img src="capturas/captura3.png" alt="Configuración de avisos aplicada con el cuadro de diálogo de la tarea de Windows creada correctamente">
+        <figcaption>El aviso queda programado como tarea de Windows</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- Promoción de DescargarFacturas (nuestro software de venta) -->
+  <!-- Testimonios -->
   <section>
-    <div class="card" style="border-left:6px solid var(--accent2); padding:26px;">
-      <div style="text-align:center; margin-bottom:14px;">
-        <h2 style="margin-bottom:6px">🧾 ¿Te gusta? Te presento DescargarFacturas</h2>
-        <p style="color:var(--muted); margin-bottom:4px; max-width:720px; margin-left:auto; margin-right:auto;">
-          Descarga tus facturas electrónicas (DTE) del correo y de Hacienda,
-          las organiza por año, mes y cliente, verifica su integridad y
-          confrúntalas con Hacienda. <strong>Sin hacerlo una a una.</strong>
-        </p>
+    <h2>Lo que dicen los contadores</h2>
+    <p class="seccion-sub">Las experiencias de quienes ya lo usan.</p>
+    <div class="testimonial-grid">
+      <div class="testimonio vacio">
+        <p>🚧 Tus palabras van aquí</p>
+        <p>Los primeros usuarios reales dejan aquí su experiencia. ¿Eres uno? Escríbenos y compártela.</p>
       </div>
-      <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap; justify-content:center;">
-        <div style="min-width:240px; text-align:center; background:#edf3ff; border-radius:12px; padding:18px; flex:1;">
-          <div style="font-size:2.4rem">⚡</div>
-          <div style="font-weight:700; color:var(--accent2); margin:6px 0 2px;">Ahorra horas cada mes</div>
-          <div style="font-size:.85rem; color:var(--muted)">DTE ordenados y verificados con Hacienda</div>
-        </div>
-        <div style="min-width:240px; text-align:center; background:#fff3dc; border:1px solid #f0c464; border-radius:12px; padding:18px; flex:1;">
-          <div style="font-size:1.6rem">🎉</div>
-          <div style="font-weight:700; color:var(--warn); margin:6px 0 2px;">Descuento de lanzamiento</div>
-          <div style="font-size:.95rem">3 versiones · $150 regular ·<br><strong>$100 de lanzamiento por WhatsApp</strong></div>
-        </div>
-        <div style="min-width:220px; text-align:center; flex:1;">
-          <a class="btn btn-descarga" style="background:var(--accent2); color:#fff; width:100%;" href="https://benavidesk.github.io/descargar-facturas-landing/" target="_blank">Ver DescargarFacturas</a>
-          <a class="btn btn-descarga" style="background:#25D366; color:#fff; width:100%; margin-top:8px;" href="https://wa.me/50366924056" target="_blank">💬 Consultar por WhatsApp</a>
-        </div>
+      <div class="testimonio vacio">
+        <p>🚧 Tus palabras van aquí</p>
+        <p>Este espacio se llenará con testimonios reales de la comunidad.</p>
       </div>
     </div>
   </section>
 
-  <!-- Países cubiertos -->
+  <!-- Cross-selling DescargarFacturas -->
+  <section id="descargarfacturas">
+    <div class="card" style="border-left:6px solid var(--accent2); padding:30px;">
+      <h2>🧾 ¿Necesitas más que recordatorios?</h2>
+      <p class="seccion-sub" style="margin-bottom:12px">
+        El recordatorio gratuito cubre las <strong>fechas oficiales</strong>. Pero si manejas
+        fechas que no están en ningún calendario — <strong>entregas a clientes, plazos internos,
+        auditorías</strong> — eso lo resuelve <strong>DescargarFacturas</strong>.
+      </p>
+      <p style="color:var(--muted); margin-bottom:6px">
+        Descarga tus facturas del correo automáticamente, las organiza por país, año, mes y tipo,
+        crea <strong>recordatorios personalizados</strong> y exporta a CSV para tus declaraciones.
+      </p>
+      <div class="cross-cta">
+        <a class="btn btn-solid" href="https://benavidesk.github.io/descargar-facturas-landing/" target="_blank">Conocer más</a>
+        <a class="btn btn-wa" href="https://wa.me/50366924056" target="_blank">💬 Pedir demo por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2 style="text-align:center">Preguntas frecuentes</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q">¿Es gratis de verdad?</div>
+        <div class="faq-a"><div class="faq-a-inner">Sí. Es 100% gratis y de código abierto. Puedes usarlo, revisar su código y hasta contribuir a mejorar los datos de tu país.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿En qué países funciona?</div>
+        <div class="faq-a"><div class="faq-a-inner">Cubre 19 países: El Salvador, Guatemala, Honduras, Nicaragua, Panamá, Costa Rica, R. Dominicana, México, Colombia, Perú, Chile, Argentina, Ecuador, Uruguay, Paraguay, Bolivia, España, Guinea Ecuatorial y EE.UU.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Mis datos se suben a la nube?</div>
+        <div class="faq-a"><div class="faq-a-inner">No. Todo queda en tu computadora. Es un programa local: tus datos no salen de tu equipo. Solo puede consultar las actualizaciones por internet si quieres.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo me avisa?</div>
+        <div class="faq-a"><div class="faq-a-inner">Programas una tarea diaria en Windows: eliges a qué hora y con cuántos días de antelación. El programa crea automáticamente la notificación sin que tengas que acordarte.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Puedo recordar fechas internas, como entregas a clientes o auditorías?</div>
+        <div class="faq-a"><div class="faq-a-inner">Los recordatorios personalizados (los que tú creas) están en nuestra versión completa, <strong>DescargarFacturas</strong>. El gratuito cubre las fechas oficiales de cada país.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Está actualizado?</div>
+        <div class="faq-a"><div class="faq-a-inner">Sí. El programa detecta automáticamente versiones nuevas y te avisa cuando hay datos actualizados disponibles.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Países -->
   <section>
     <h2>Países cubiertos</h2>
     <div class="paises">
@@ -155,15 +216,41 @@ footer a{color:#6db5ff; text-decoration:none;}
       <span>🇺🇸 EE.UU.</span>
     </div>
   </section>
+
+  <!-- CTA final -->
+  <section style="text-align:center; padding-top:20px;">
+    <h2>Empieza gratis hoy</h2>
+    <p class="seccion-sub" style="margin-left:auto; margin-right:auto">Descárgalo, elige tu país y deja de preocuparte por las fechas.</p>
+    <a class="btn btn-solid" href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales/releases/download/v0.3.0/AvisosObligacionesFiscales_v0.3.0.zip" style="font-size:1.2rem">⬇ Descargar Gratis Ahora</a>
+    <div style="margin-top:14px; color:var(--muted); font-size:.9rem">¿Dudas? <a href="https://wa.me/50366924056" style="color:var(--accent2)">Escríbenos por WhatsApp</a></div>
+  </section>
+
 </div>
 
 <footer>
   <div class="container">
     <p>Recordatorio de Obligaciones Fiscales · Software gratuito y de código abierto.</p>
-    <p style="margin-top:6px"><a href="#">Política de privacidad</a> · <a href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales">GitHub</a></p>
-    <p style="margin-top:8px; opacity:.7">No sustituye el asesoramiento profesional. Verifica siempre el calendario oficial de tu país.</p>
+    <p style="margin-top:6px"><a href="https://github.com/benavidesk/recordatorio-obligaciones-fiscales">Código en GitHub</a> · <a href="https://wa.me/50366924056">Contacto</a></p>
+    <p class="disclaimer">No sustituye el asesoramiento profesional. Verifica siempre el calendario oficial de tu país.</p>
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = q.parentElement;
+      var abierto = item.classList.contains('abierto');
+      document.querySelectorAll('.faq-item').forEach(function(i){
+        i.classList.remove('abierto');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!abierto){
+        item.classList.add('abierto');
+        var a = item.querySelector('.faq-a');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
 </body>
 </html>
