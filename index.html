@@ -40,17 +40,17 @@ h2{font-size:1.75rem; color:var(--accent2); margin-bottom:8px; font-weight:800;}
 .seccion-sub{color:var(--muted); margin-bottom:26px; max-width:720px;}
 .card{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow);}
 .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;}
-.feature{padding:20px; border-radius:12px; background:#fff; border:1px solid var(--border);}
+.feature{padding:20px; border-radius:12px; background:#fff; border:1px solid var(--border); text-align:center;}
 .feature .icon{font-size:1.7rem;}
 .feature h3{font-size:1.12rem; margin:8px 0 6px; color:var(--accent2);}
 .feature p{color:var(--muted); font-size:.94rem;}
 
 /* ---- CAPTURAS ---- */
 #como-funciona{background:#eaf2ff;}
-.captura-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;}
-.captura{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:var(--shadow);}
-.captura img{width:100%; height:auto; display:block; border-bottom:1px solid var(--border);}
-.captura figcaption{padding:12px 16px; font-size:.9rem; color:var(--muted); text-align:center;}
+.captura-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; align-items:stretch;}
+.captura{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column;}
+.captura img{width:100%; height:260px; object-fit:cover; object-position:top; display:block; border-bottom:1px solid var(--border);}
+.captura figcaption{padding:12px 16px; font-size:.9rem; color:var(--muted); text-align:center; flex:1 0 auto; display:flex; align-items:center; justify-content:center;}
 
 /* ---- FAQ ---- */
 .faq{max-width:760px; margin:0 auto;}
@@ -61,28 +61,33 @@ h2{font-size:1.75rem; color:var(--accent2); margin-bottom:8px; font-weight:800;}
 .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
 .faq-a-inner{padding:0 22px 18px; color:var(--muted); font-size:.95rem;}
 
-/* ---- TESTIMONIOS ---- */
-.testimonial-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px;}
-.testimonio{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; box-shadow:var(--shadow);}
-.testimonio blockquote{font-style:italic; color:var(--text); margin-bottom:10px; font-size:.97rem;}
-.testimonio cite{color:var(--muted); font-size:.87rem; font-style:normal;}
-.testimonio.vacio{background:#f9fbff; border-style:dashed; color:var(--muted); text-align:center;}
-.testimonio.vacio p{font-style:italic; font-size:.94rem; margin:6px 0;}
-
 /* ---- CROSS-SELL ---- */
 #descargarfacturas{background:linear-gradient(180deg,#fff,#eef6ff);}
 .cross-cta{display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:center; margin-top:22px;}
 
+/* ---- PASOS (cómo funciona) ---- */
+.pasos{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:6px;}
+.paso{background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px; box-shadow:var(--shadow); text-align:center;}
+.paso .num{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:var(--accent2); color:#fff; font-weight:800; font-size:1.1rem; margin-bottom:10px;}
+.paso .icon{font-size:1.6rem; margin-bottom:6px;}
+.paso h3{font-size:1.05rem; color:var(--accent2); margin-bottom:4px;}
+.paso p{color:var(--muted); font-size:.9rem;}
+
 /* ---- PAISES ---- */
 .paises{display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
-.paises span{background:#fff; border:1px solid var(--border); padding:6px 14px; border-radius:999px; font-size:.9rem;}
+.paises span{background:#fff; border:1px solid var(--border); padding:6px 14px; border-radius:999px; font-size:.9rem; display:inline-flex; align-items:center; gap:6px;}
 
 /* ---- FOOTER ---- */
 footer{background:#0a1628; color:#aac4ee; padding:34px 0 30px; text-align:center; font-size:.9rem;}
 footer a{color:#6db5ff; text-decoration:none;}
 footer .disclaimer{margin-top:10px; opacity:.7;}
 
-@media(max-width:640px){ .btn{width:100%; text-align:center;} }
+@media(max-width:640px){
+  .btn{width:100%; text-align:center;}
+  .paises{gap:6px;}
+  .paises span{font-size:.8rem; padding:5px 10px;}
+  .captura img{height:200px;}
+}
 </style>
 </head>
 <body>
@@ -136,20 +141,16 @@ footer .disclaimer{margin-top:10px; opacity:.7;}
     </div>
   </section>
 
-  <!-- Testimonios -->
-  <section>
-    <h2>Lo que dicen los contadores</h2>
-    <p class="seccion-sub">Las experiencias de quienes ya lo usan.</p>
-    <div class="testimonial-grid">
-      <div class="testimonio vacio">
-        <p>🚧 Tus palabras van aquí</p>
-        <p>Los primeros usuarios reales dejan aquí su experiencia. ¿Eres uno? Escríbenos y compártela.</p>
-      </div>
-      <div class="testimonio vacio">
-        <p>🚧 Tus palabras van aquí</p>
-        <p>Este espacio se llenará con testimonios reales de la comunidad.</p>
-      </div>
+  <!-- Sección de pasos: cómo descargar e instalar -->
+  <section id="pasos">
+    <h2>Cómo empezar en 3 pasos</h2>
+    <p class="seccion-sub">Descárgalo y en un minuto lo tienes funcionando.</p>
+    <div class="pasos">
+      <div class="paso"><div class="num">1</div><div class="icon">⬇️</div><h3>Descarga</h3><p>Haz clic en "Descargar Gratis Ahora" y guarda el archivo .zip (12,5 MB).</p></div>
+      <div class="paso"><div class="num">2</div><div class="icon">📁</div><h3>Descomprime</h3><p>Haz clic derecho sobre el .zip y elige "Extraer aquí". Se crea una carpeta con el programa.</p></div>
+      <div class="paso"><div class="num">3</div><div class="icon">▶️</div><h3>Ejecuta</h3><p>Abre la carpeta y haz doble clic en <strong>AvisosObligacionesFiscales.exe</strong>. Ya funciona.</p></div>
     </div>
+    <p style="color:var(--muted); font-size:.9rem; text-align:center; margin-top:16px">No necesita instalación: es portátil y se abre directo desde la carpeta.</p>
   </section>
 
   <!-- Cross-selling DescargarFacturas -->
